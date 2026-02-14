@@ -75,15 +75,6 @@ docs/ai-usage-report.md
 
 ---
 
-## Live Deployment (Optional)
-
-If deployed:
-
-GitHub Pages link:
-<your-live-link-here>
-
----
-
 ## Author
 
 Hassan Alshabanh  
