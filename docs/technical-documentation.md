@@ -17,21 +17,24 @@ No frameworks or external libraries were used.
 
 ---
 
-## File Structure
+## Folder Structure
 
+```
 assignment-1/
 │
 ├── index.html
 ├── css/
-│ └── styles.css
+│   └── styles.css
 ├── js/
-│ └── script.js
+│   └── script.js
 ├── assets/
-│ └── images/
+│   └── images/
 ├── docs/
-│ ├── ai-usage-report.md
-│ └── technical-documentation.md
+│   ├── ai-usage-report.md
+│   └── technical-documentation.md
 └── README.md
+```
+
 
 
 ---
