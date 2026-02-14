@@ -105,6 +105,26 @@ button:hover {
   }
 }
 
+/* dark mode */
+
+body.dark {
+  background-color: #111;
+  color: white;
+}
+
+body.dark header {
+  background-color: #000;
+}
+
+body.dark nav a {
+  color: white;
+}
+
+body.dark button {
+  background-color: white;
+  color: black;
+}
+
 
 
 
