@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="css/styles.css">
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header>
   <h1>hassan alshabanh</h1>
+  <p id="greeting">Hello!</p>
+
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
+  <button id="themeToggle" type="button">Toggle Theme</button>
+
 </header>
 
 <main>
@@ -43,7 +47,7 @@
   </article>
 </section>
 
-<section id="contact">
+<section id="contactForm">
   <h2>Contact</h2>
   <p>Send me a message </p>
 
@@ -77,9 +81,9 @@
   </p>
 </section>
 
-  <footer>
-    <p>© hassan alshabanh</p>
-  </footer>
+<footer>
+  <p>© <span id="year"></span> hassan alshabanh</p>
+</footer>
   <script src="js/script.js"></script>
 </body>
 </html>
