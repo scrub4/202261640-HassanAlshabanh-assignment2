@@ -8,7 +8,7 @@ During this assignment, I used several AI tools to support my learning process:
 - **GitHub Copilot** – Assisted with code completion and suggested improvements while writing HTML, CSS, and JavaScript.
 - **Claude (AI assistant)** – Used to compare explanations and review logic in some parts of my JavaScript.
 
-AI was mainly used as a learning support tool rather than a code generator.
+AI was mainly used as a learning support tool and a code generator.
 
 ---
 
