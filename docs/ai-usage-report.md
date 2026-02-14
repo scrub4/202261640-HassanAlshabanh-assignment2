@@ -8,7 +8,7 @@ During this assignment, I used several AI tools to support my learning process:
 - **GitHub Copilot** – Assisted with code completion and suggested improvements while writing HTML, CSS, and JavaScript.
 - **Claude (AI assistant)** – Used to compare explanations and review logic in some parts of my JavaScript.
 
-AI was mainly used as a learning support tool and a code generator.
+AI was mainly used as a learning support tool and for generating example code when needed.
 
 ---
 
@@ -17,21 +17,23 @@ AI was mainly used as a learning support tool and a code generator.
 ### Benefits
 
 AI helped me:
+
 - Identify syntax mistakes (missing brackets, incorrect IDs).
 - Fix logical errors in JavaScript (e.g., incorrect element selection).
 - Improve my responsive layout using Flexbox.
 - Better understand DOM manipulation and event listeners.
-- Write clearer comments to explain my code.
+- Explain certain parts of HTML, CSS, and JavaScript that I did not fully understand.
 
 It also introduced me to concepts not fully covered in lecture, such as:
-- `localStorage` for saving theme preferences
-- Using `classList.toggle()` properly
-- Organizing JavaScript inside `DOMContentLoaded`
+
+- `localStorage` for saving theme preferences.
+- Using `classList.toggle()` properly.
+- Organizing JavaScript inside `DOMContentLoaded`.
 
 ### Challenges
 
-Some AI suggestions were too advanced for my level, so I had to simplify them.
-Occasionally, I needed to adjust AI-generated code to match my actual file structure.
+Some AI suggestions were too advanced for my current level, so I had to simplify them.  
+Occasionally, I needed to adjust AI-generated code to match my actual file structure and requirements.
 
 ---
 
@@ -39,13 +41,13 @@ Occasionally, I needed to adjust AI-generated code to match my actual file struc
 
 By using AI tools, I improved my understanding of:
 
-- Semantic HTML structure
-- Responsive CSS using Flexbox and media queries
-- JavaScript DOM interaction
-- Form validation logic
-- Code organization and commenting
+- Semantic HTML structure.
+- Responsive CSS using Flexbox and media queries.
+- JavaScript DOM interaction.
+- Form validation logic.
+- Code organization and commenting.
 
-AI supported my learning process but I made sure to understand and modify all code before using it.
+AI supported my learning process, but I made sure to understand and modify all code before using it.
 
 ---
 
@@ -53,10 +55,6 @@ AI supported my learning process but I made sure to understand and modify all co
 
 To maintain academic integrity:
 
-- I reviewed all AI-generated suggestions.
+- I reviewed all AI-generated suggestions carefully.
 - I rewrote explanations in my own words.
-- I tested every feature manually in the browser.
-- I only used code that I understood.
-
-AI was used as a learning assistant, not as a replacement for understanding the material.
-
+- I tested every feature manually in the browse
