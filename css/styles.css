@@ -26,7 +26,12 @@ header {
   background-color: #111;
   color: white;
   padding: 15px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 
 nav {
   margin-top: 10px;
@@ -41,5 +46,43 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+#projects {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#projects article {
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 300px;
+}
+
+form {
+  max-width: 400px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+
 
 
