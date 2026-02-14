@@ -29,6 +29,9 @@ This project was created as part of a web development assignment.
 
 ## Folder Structure
 
+## Folder Structure
+
+```
 assignment-1/
 │
 ├── index.html
@@ -42,6 +45,7 @@ assignment-1/
 │   ├── ai-usage-report.md
 │   └── technical-documentation.md
 └── README.md
+```
 
 ---
 
