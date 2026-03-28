@@ -12,8 +12,7 @@ It demonstrates basic front-end development skills including layout design, resp
 - HTML5
 - CSS3 (Flexbox + Media Queries)
 - JavaScript (Vanilla JS)
-
-No frameworks or external libraries were used.
+- External API: adviceslip.com (public, no key required)
 
 ---
 
@@ -48,6 +47,9 @@ The website includes:
 - Projects section (2 projects)
 - Contact form
 - Additional sections (Hobbies and Learning Goals)
+- Skills section with animated progress bars
+- Quote of the Moment section (API data display)
+- Project search input with empty state message
 - Footer with dynamic year
 
 Each section uses an ID for navigation and JavaScript interaction.
@@ -69,10 +71,16 @@ The layout adjusts properly for desktop and mobile screens.
 
 The JavaScript file includes:
 
-1. Dynamic year in the footer.
-2. Time-based greeting message.
-3. Basic contact form validation.
-4. Dark mode toggle with saved preference using `localStorage`.
+1. Dynamic year in the footer
+2. Time-based greeting message
+3. Contact form validation with inline confirmation message
+4. Dark mode toggle with saved preference using localStorage
+5. Fetch random advice from public API (adviceslip.com) with hardcoded fallback quotes
+6. Live project search filter with "no results" empty state message
+7. Scroll-triggered skill bar animation using IntersectionObserver
+
+
+
 
 All scripts run after `DOMContentLoaded` to ensure elements are loaded.
 
@@ -82,12 +90,11 @@ All scripts run after `DOMContentLoaded` to ensure elements are loaded.
 
 - The contact form does not connect to a backend.
 - Validation is basic and client-side only.
-- No advanced animations or external libraries are used.
+- No external libraries are used — all animations are pure CSS transitions
 
 ---
 
 ## Conclusion
 
-This project demonstrates understanding of core web development concepts including semantic HTML, responsive design, and basic JavaScript interactivity.
-
+This project demonstrates understanding of core web development concepts including semantic HTML, responsive design, JavaScript interactivity, public API integration, and scroll-based animations.
 
