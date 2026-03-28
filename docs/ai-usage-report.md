@@ -53,6 +53,12 @@ By using AI tools, I improved my understanding of:
 - JavaScript DOM interaction.
 - Form validation logic.
 - Code organization and commenting.
+- Public API integration using fetch() with .then() and .catch()
+- Scroll-based animation using IntersectionObserver
+- Proper form event handling with e.preventDefault()
+- Empty state and loading state UI patterns
+
+
 
 AI supported my learning process, but I made sure to understand and modify all code before using it.
 
