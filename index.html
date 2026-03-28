@@ -14,6 +14,8 @@
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#quote">Quote</a>
     <a href="#contactForm">Contact</a>
   </nav>
   <button id="themeToggle" type="button">Toggle Theme</button>
@@ -33,6 +35,14 @@
 
 <section id="projects">
   <h2>Projects</h2>
+   <!-- Search bar -->
+    <input
+      type="text"
+      id="projectSearch"
+      placeholder="Search projects..."
+      style="margin-bottom: 20px; padding: 8px; width: 100%; max-width: 400px; border: 1px solid #ccc;"
+    />
+    <p id="noResults" style="display:none; color: red;">No projects match your search.</p>
 
   <article>
     <img src="assets/images/download.png" alt="Project 1 placeholder"/>
@@ -46,6 +56,50 @@
     <p>A small project to practice DOM manipulation and event listeners.</p>
   </article>
 </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+ 
+    <div class="skill">
+      <label>HTML</label>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" data-level="90"></div>
+      </div>
+    </div>
+ 
+    <div class="skill">
+      <label>CSS</label>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" data-level="75"></div>
+      </div>
+    </div>
+ 
+    <div class="skill">
+      <label>JavaScript</label>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" data-level="60"></div>
+      </div>
+    </div>
+ 
+    <div class="skill">
+      <label>Problem Solving</label>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" data-level="80"></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Quote Section -->
+
+  <section id="quote">
+    <h2>Quote of the Moment</h2>
+    <p id="quoteText">Loading...</p>
+    <p id="quoteAuthor"></p>
+    <button id="newQuoteBtn" type="button">New Quote</button>
+  </section>
+
 
 <section id="contactForm">
   <h2>Contact</h2>

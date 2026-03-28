@@ -133,6 +133,71 @@ body.dark button {
   display: block;
 }
 
+/* =========================
+   Skills Section
+========================== */
+#skills {
+  max-width: 600px;
+}
+ 
+.skill {
+  margin-bottom: 18px;
+}
+ 
+.skill label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+ 
+.skill-bar {
+  background-color: #ddd;
+  border-radius: 6px;
+  height: 18px;
+  width: 100%;
+  overflow: hidden;
+}
+ 
+.skill-bar-fill {
+  height: 100%;
+  width: 0%;                         /* starts at 0, JS animates to data-level */
+  background-color: #111;
+  border-radius: 6px;
+  transition: width 1s ease-in-out;  /* smooth animation */
+}
+ 
+body.dark .skill-bar {
+  background-color: #444;
+}
+ 
+body.dark .skill-bar-fill {
+  background-color: white;
+}
+ 
+/* =========================
+   Quote Section
+========================== */
+#quote {
+  background-color: #f9f9f9;
+  border-left: 4px solid #111;
+  max-width: 600px;
+}
+ 
+#quoteText {
+  font-style: italic;
+  font-size: 1.1em;
+}
+ 
+#quoteAuthor {
+  font-weight: bold;
+  margin-top: 6px;
+}
+ 
+body.dark #quote {
+  background-color: #222;
+  border-left-color: white;
+}
+ 
 
 
 
