@@ -23,6 +23,11 @@ AI helped me:
 - Improve my responsive layout using Flexbox.
 - Better understand DOM manipulation and event listeners.
 - Explain certain parts of HTML, CSS, and JavaScript that I did not fully understand.
+- Identified a critical bug where getElementById("contactForm") was selecting the wrong element
+- Helped integrate a public API with proper error handling and fallback logic
+- Suggested e.preventDefault() was missing from the form handler
+
+
 
 It also introduced me to concepts not fully covered in lecture, such as:
 
@@ -34,6 +39,8 @@ It also introduced me to concepts not fully covered in lecture, such as:
 
 Some AI suggestions were too advanced for my current level, so I had to simplify them.  
 Occasionally, I needed to adjust AI-generated code to match my actual file structure and requirements.
+The first API suggested (quotable.io) was shut down and did not work, requiring switching to a different one (adviceslip.com)
+
 
 ---
 
