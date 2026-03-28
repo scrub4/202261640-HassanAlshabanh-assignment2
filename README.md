@@ -24,6 +24,20 @@ This project was created as part of a web development assignment.
 - Time-based greeting message
 - Contact form validation (no backend)
 - Dark mode toggle using localStorage
+- Public API fetch (advice slip with fallback)
+- Project search filter
+- Animated skills section
+- Inline form confirmation message
+- Fetch data from public API (adviceslip.com) with fallback quotes
+- Live project search/filter
+- Animated skill progress bars (scroll-triggered)
+- Inline success/error messages on form submission
+- Loading indicator when fetching API data
+- Empty state message when no projects match search
+
+
+
+
 
 ---
 
@@ -72,6 +86,8 @@ AI tools were used during development for:
 - Improving responsive design
 - Reviewing code structure
 - Suggesting comments and improvements
+- Fixing bugs (form selector, missing preventDefault)
+- Suggesting new additions
 
 Full details are documented in:
 
