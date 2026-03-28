@@ -124,6 +124,9 @@ body.dark button {
   background-color: white;
   color: black;
 }
+body.dark button:hover {
+  background-color: #ccc;
+}
 
 /* making image inside the frame */ 
 #projects article img {
