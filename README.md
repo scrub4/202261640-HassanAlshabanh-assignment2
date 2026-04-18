@@ -30,7 +30,7 @@ Assignment 3 adds two external API integrations, advanced filtering and sorting 
 ## Folder Structure
  
 ```
-id-name-assignment3/
+202261640-HassanAlshabanh-assignment3/
 ├── README.md
 ├── index.html
 ├── css/
