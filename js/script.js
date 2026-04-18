@@ -258,3 +258,75 @@ const quoteText = document.getElementById("quoteText");
 
 });
 
+  /* =========================
+     9. Weather API – Open-Meteo (no API key required)
+        Location: KFUPM, Dhahran, Saudi Arabia
+        Lat: 26.3044, Lon: 50.1535
+  ========================== */
+  const weatherStatus    = document.getElementById("weatherStatus");
+  const weatherInfo      = document.getElementById("weatherInfo");
+  const weatherTemp      = document.getElementById("weatherTemp");
+  const weatherDesc      = document.getElementById("weatherDesc");
+  const weatherWind      = document.getElementById("weatherWind");
+  const weatherHumidity  = document.getElementById("weatherHumidity");
+  const refreshWeatherBtn = document.getElementById("refreshWeatherBtn");
+
+  // Maps Open-Meteo WMO weather codes to readable descriptions
+  function getWeatherDescription(code) {
+    const descriptions = {
+      0: "Clear sky ☀️",
+      1: "Mainly clear 🌤️", 2: "Partly cloudy ⛅", 3: "Overcast ☁️",
+      45: "Foggy 🌫️", 48: "Foggy 🌫️",
+      51: "Light drizzle 🌦️", 53: "Drizzle 🌦️", 55: "Heavy drizzle 🌧️",
+      61: "Slight rain 🌧️", 63: "Rain 🌧️", 65: "Heavy rain 🌧️",
+      80: "Slight showers 🌦️", 81: "Showers 🌦️", 82: "Heavy showers 🌧️",
+      95: "Thunderstorm ⛈️", 99: "Thunderstorm with hail ⛈️"
+    };
+    return descriptions[code] || "Unknown conditions";
+  }
+
+  function fetchWeather() {
+    if (!weatherStatus) return;
+
+    weatherStatus.textContent = "Loading weather...";
+    weatherStatus.style.display = "block";
+    if (weatherInfo) weatherInfo.style.display = "none";
+
+    const url =
+      "https://api.open-meteo.com/v1/forecast" +
+      "?latitude=26.3044&longitude=50.1535" +
+      "&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code" +
+      "&temperature_unit=celsius&wind_speed_unit=kmh&timezone=Asia%2FRiyadh";
+
+    fetch(url)
+      .then(function (response) {
+        if (!response.ok) throw new Error("Weather fetch failed");
+        return response.json();
+      })
+      .then(function (data) {
+        const current = data.current;
+        const temp    = current.temperature_2m;
+        const code    = current.weather_code;
+        const wind    = current.wind_speed_10m;
+        const humidity = current.relative_humidity_2m;
+
+        if (weatherTemp)     weatherTemp.textContent     = `${temp}°C`;
+        if (weatherDesc)     weatherDesc.textContent     = getWeatherDescription(code);
+        if (weatherWind)     weatherWind.textContent     = `💨 Wind: ${wind} km/h`;
+        if (weatherHumidity) weatherHumidity.textContent = `💧 Humidity: ${humidity}%`;
+
+        weatherStatus.style.display = "none";
+        if (weatherInfo) weatherInfo.style.display = "block";
+      })
+      .catch(function () {
+        weatherStatus.textContent = "⚠️ Could not load weather data. Please try again.";
+        weatherStatus.style.display = "block";
+        if (weatherInfo) weatherInfo.style.display = "none";
+      });
+  }
+
+  fetchWeather();
+
+  if (refreshWeatherBtn) {
+    refreshWeatherBtn.addEventListener("click", fetchWeather);
+  }
