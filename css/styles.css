@@ -64,6 +64,8 @@ nav a:hover {
   flex: 1 1 160px;
   min-width: 0;
   font-size: 0.95rem;
+  width: auto;
+  margin: 0;
 }
 
  /* =========================
