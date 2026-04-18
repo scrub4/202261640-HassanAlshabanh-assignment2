@@ -30,32 +30,53 @@
   </p>
   <p><strong>Tagline:</strong> Learning by building.</p>
 
-  <img src="assets/images/KFUPM_seal.png" alt="Profile placeholder" width="220" />
+  <p id="timerDisplay">⏱ Time on site: 0s</p>
+
+  <img src="assets/images/KFUPM_seal.png" alt="Profile placeholder" width="220" loading="lazy" />
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-   <!-- Search bar -->
-    <input
-      type="text"
-      id="projectSearch"
-      placeholder="Search projects..."
-      style="margin-bottom: 20px; padding: 8px; width: 100%; max-width: 400px; border: 1px solid #ccc;"
-    />
+  <section id="projects-section">
+    <h2>Projects</h2>
+ 
+    <!-- Search + Filter + Sort controls (OUTSIDE the flex projects container) -->
+    <div id="projectControls">
+      <input
+        type="text"
+        id="projectSearch"
+        placeholder="Search projects..."
+      />
+ 
+      <select id="projectFilter">
+        <option value="all">All Categories</option>
+        <option value="web">Web</option>
+        <option value="javascript">JavaScript</option>
+      </select>
+ 
+      <select id="projectSort">
+        <option value="default">Sort: Default</option>
+        <option value="az">Sort: A–Z</option>
+        <option value="za">Sort: Z–A</option>
+      </select>
+    </div>
+ 
     <p id="noResults" style="display:none; color: red;">No projects match your search.</p>
-
-  <article>
-    <img src="assets/images/download.png" alt="Project 1 placeholder"/>
-    <h3>Project 1: Portfolio Website</h3>
-    <p>A simple responsive portfolio site built with HTML, CSS, and JavaScript.</p>
-  </article>
-
-  <article>
-    <img src="assets/images/doto.png" alt="Project 2 placeholder" />
-    <h3>Project 2: To-Do List (Mini)</h3>
-    <p>A small project to practice DOM manipulation and event listeners.</p>
-  </article>
-</section>
+ 
+    <div id="projects">
+      <article data-category="web" data-title="Portfolio Website">
+        <img src="assets/images/download.png" alt="Portfolio Website screenshot" loading="lazy"/>
+        <h3>Project 1: Portfolio Website</h3>
+        <p>A simple responsive portfolio site built with HTML, CSS, and JavaScript.</p>
+        <span class="tag">Web</span>
+      </article>
+ 
+      <article data-category="javascript" data-title="To-Do List">
+        <img src="assets/images/doto.png" alt="To-Do List screenshot" loading="lazy"/>
+        <h3>Project 2: To-Do List (Mini)</h3>
+        <p>A small project to practice DOM manipulation and event listeners.</p>
+        <span class="tag">JavaScript</span>
+      </article>
+    </div>
+  </section>
 
   <!-- Skills Section -->
   <section id="skills">

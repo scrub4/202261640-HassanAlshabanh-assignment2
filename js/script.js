@@ -28,34 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /* =========================
      3. Contact Form Validation
   ========================== */
-  const form = document.querySelector("#contactForm form");  ;
-
-  if (form) {
-    form.addEventListener("submit", function (e) {
-       e.preventDefault(); 
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      if (name === "" || email === "" || message === "") {
-        showFormMessage("Please fill in all fields.", "error");
-        return;
-
-      }
-
-      // All fields valid — show confirmation message
-
-      form.reset();
-      showFormMessage(
-        `Thanks, ${name}! Your message has been sent. I'll get back to you soon.`,
-        "success"
-      );
-
-    });
-  }
-  // Helper: show a styled confirmation or error message below the form
-  function showFormMessage(text, type) {
-    // Remove any existing message
+  function showFormMessage(formEl, text, type) {
     const existing = document.getElementById("formMessage");
     if (existing) existing.remove();
  
@@ -77,13 +50,42 @@ document.addEventListener("DOMContentLoaded", function () {
       msg.style.border = "1px solid #f5c6cb";
     }
  
-    // Insert the message after the form
-    form.insertAdjacentElement("afterend", msg);
- 
-    // Auto-remove after 6 seconds
+    formEl.insertAdjacentElement("afterend", msg);
     setTimeout(() => msg.remove(), 6000);
   }
-
+ 
+  const contactForm = document.getElementById("contactFormEl");
+ 
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+ 
+      const name    = document.getElementById("name").value.trim();
+      const email   = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+ 
+      // Check empty fields
+      if (name === "" || email === "" || message === "") {
+        showFormMessage(contactForm, "Please fill in all fields.", "error");
+        return;
+      }
+ 
+      // Advanced email format check
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showFormMessage(contactForm, "Please enter a valid email address.", "error");
+        return;
+      }
+ 
+      // All fields valid — show confirmation
+      contactForm.reset();
+      showFormMessage(
+        contactForm,
+        `Thanks, ${name}! Your message has been sent. I'll get back to you soon.`,
+        "success"
+      );
+    });
+  }
 
   /* =========================
      4. Dark Mode Toggle
@@ -160,32 +162,56 @@ const quoteText = document.getElementById("quoteText");
   /* =========================
      6. Project Search Filter
   ========================== */
-  const searchInput = document.getElementById("projectSearch");
-  const articles = document.querySelectorAll("#projects article");
+  const searchInput  = document.getElementById("projectSearch");
+  const filterSelect = document.getElementById("projectFilter");
+  const sortSelect   = document.getElementById("projectSort");
+  const projectsContainer = document.getElementById("projects");
+  const noResults    = document.getElementById("noResults");
  
-  if (searchInput) {
-    searchInput.addEventListener("input", function () {
-      const query = searchInput.value.trim().toLowerCase();
+  function applyProjectControls() {
+    const query    = searchInput  ? searchInput.value.trim().toLowerCase()  : "";
+    const category = filterSelect ? filterSelect.value                       : "all";
+    const sortVal  = sortSelect   ? sortSelect.value                         : "default";
  
-      articles.forEach(function (article) {
-        const text = article.textContent.toLowerCase();
-        if (text.includes(query)) {
-          article.style.display = "block";
-        } else {
-          article.style.display = "none";
-        }
-      });
+    // Get fresh list of articles each time
+    const articles = Array.from(projectsContainer
+      ? projectsContainer.querySelectorAll("article")
+      : []);
  
-      // Show a "no results" message if all articles are hidden
-      const noResults = document.getElementById("noResults");
-      const allHidden = Array.from(articles).every(
-        (a) => a.style.display === "none"
-      );
-      if (noResults) {
-        noResults.style.display = allHidden ? "block" : "none";
-      }
+    // 1. Filter by search text AND category
+    articles.forEach(function (article) {
+      const text     = article.textContent.toLowerCase();
+      const cat      = article.getAttribute("data-category") || "";
+      const matchSearch   = text.includes(query);
+      const matchCategory = category === "all" || cat === category;
+      article.style.display = (matchSearch && matchCategory) ? "block" : "none";
     });
+ 
+    // 2. Sort visible articles
+    const visible = articles.filter(a => a.style.display !== "none");
+ 
+    visible.sort(function (a, b) {
+      const titleA = (a.getAttribute("data-title") || "").toLowerCase();
+      const titleB = (b.getAttribute("data-title") || "").toLowerCase();
+      if (sortVal === "az") return titleA.localeCompare(titleB);
+      if (sortVal === "za") return titleB.localeCompare(titleA);
+      return 0; // default order
+    });
+ 
+    // Re-append in sorted order
+    visible.forEach(article => projectsContainer.appendChild(article));
+ 
+    // 3. No-results message
+    if (noResults) {
+      const allHidden = articles.every(a => a.style.display === "none");
+      noResults.style.display = allHidden ? "block" : "none";
+    }
   }
+ 
+  if (searchInput)  searchInput.addEventListener("input",  applyProjectControls);
+  if (filterSelect) filterSelect.addEventListener("change", applyProjectControls);
+  if (sortSelect)   sortSelect.addEventListener("change",   applyProjectControls);
+
  
   /* 
      7. Skills Progress Bar Animation
@@ -211,6 +237,22 @@ const quoteText = document.getElementById("quoteText");
     observer.observe(bar);
   });
 
+  /* =========================
+     8. Time-on-Site Timer
+  ========================== */
+  const timerDisplay = document.getElementById("timerDisplay");
+ 
+  if (timerDisplay) {
+    let seconds = 0;
+    setInterval(function () {
+      seconds++;
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      timerDisplay.textContent = mins > 0
+        ? `⏱ Time on site: ${mins}m ${secs}s`
+        : `⏱ Time on site: ${secs}s`;
+    }, 1000);
+  }
 
 
 
