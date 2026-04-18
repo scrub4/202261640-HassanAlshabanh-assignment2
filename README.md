@@ -51,7 +51,7 @@ id-name-assignment3/
  
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_ID/id-name-assignment3.git
+   git clone https://github.com/scrub4/202261640-HassanAlshabanh-assignment3
    ```
 2. Open the project folder.
 3. Open `index.html` in any modern browser (Chrome, Firefox, Edge).
