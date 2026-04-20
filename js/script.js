@@ -254,11 +254,7 @@ const quoteText = document.getElementById("quoteText");
     }, 1000);
   }
 
-
-
-});
-
-  /* =========================
+    /* =========================
      9. Weather API – Open-Meteo (no API key required)
         Location: KFUPM, Dhahran, Saudi Arabia
         Lat: 26.3044, Lon: 50.1535
@@ -330,3 +326,6 @@ const quoteText = document.getElementById("quoteText");
   if (refreshWeatherBtn) {
     refreshWeatherBtn.addEventListener("click", fetchWeather);
   }
+});
+
+ 
